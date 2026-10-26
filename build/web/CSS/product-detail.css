@@ -1,0 +1,283 @@
+/* =========================
+   RESET CSS - XÓA MẶC ĐỊNH TRÌNH DUYỆT
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;                      /* Xóa lề ngoài mặc định */
+    padding: 0;                     /* Xóa khoảng đệm mặc định */
+    box-sizing: border-box;         /* Padding/border không làm tăng kích thước phần tử */
+    font-family: Arial, Helvetica, sans-serif; /* Font chữ mặc định */
+}
+
+/* Phần body của trang */
+body {
+    background: #f5f5f5;            /* Màu nền xám nhạt */
+}
+
+/* =========================
+   TOPBAR - THANH THÔNG BÁO TRÊN CÙNG
+========================= */
+
+/* Thanh thông báo phía trên cùng */
+.topbar {
+    background: #111;               /* Nền đen */
+    color: white;                   /* Chữ trắng */
+    text-align: center;             /* Canh giữa chữ */
+    padding: 10px;                  /* Đệm 10px */
+    font-size: 14px;                /* Cỡ chữ 14px */
+}
+
+/* =========================
+   HEADER - PHẦN ĐẦU TRANG
+========================= */
+
+/* Header chứa logo và nút quay lại */
+.header {
+    background: white;              /* Nền trắng */
+    padding: 18px 8%;               /* Đệm trên dưới 18px, trái phải 8% */
+    display: flex;                  /* Dùng flex để sắp xếp */
+    justify-content: space-between; /* Canh 2 đầu: logo trái, nút quay lại phải */
+    align-items: center;            /* Canh giữa theo chiều dọc */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+}
+
+/* Logo chữ */
+.logo {
+    font-size: 30px;                /* Cỡ chữ 30px */
+    font-weight: bold;              /* Chữ đậm */
+    color: #ff6600;                 /* Màu cam */
+}
+
+/* Nút quay lại trang chủ */
+.back-home {
+    text-decoration: none;          /* Bỏ gạch chân */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    padding: 12px 18px;             /* Đệm trên dưới 12px, trái phải 18px */
+    border-radius: 10px;            /* Bo góc 10px */
+    font-weight: bold;              /* Chữ đậm */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút quay lại */
+.back-home:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+}
+
+/* =========================
+   DETAIL CONTAINER - KHUNG CHỨA CHI TIẾT SẢN PHẨM
+========================= */
+
+/* Khung chính chứa ảnh và thông tin sản phẩm (chia 2 cột) */
+.detail-container {
+    width: 90%;                     /* Chiều rộng 90% so với màn hình */
+    margin: 40px auto;              /* Lề trên dưới 40px, auto để canh giữa */
+    display: grid;                  /* Dùng Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Chia 2 cột bằng nhau (ảnh | thông tin) */
+    gap: 40px;                      /* Khoảng cách giữa 2 cột 40px */
+    background: white;              /* Nền trắng */
+    padding: 40px;                  /* Đệm trong 40px */
+    border-radius: 18px;            /* Bo góc 18px */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+}
+
+/* =========================
+   IMAGE - KHU VỰC ẢNH SẢN PHẨM
+========================= */
+
+/* Cột bên trái: chứa ảnh sản phẩm */
+.detail-image {
+    display: flex;                  /* Dùng flex */
+    justify-content: center;        /* Canh giữa ảnh theo chiều ngang */
+    align-items: center;            /* Canh giữa ảnh theo chiều dọc */
+}
+
+/* Ảnh sản phẩm chính */
+.detail-image img {
+    width: 100%;                    /* Chiều rộng 100% khung cha */
+    max-width: 450px;               /* Chiều rộng tối đa 450px */
+    height: 450px;                  /* Chiều cao cố định 450px */
+    object-fit: contain;            /* Giữ tỷ lệ ảnh, không cắt */
+    background: white;              /* Nền trắng */
+}
+
+/* =========================
+   INFO - KHU VỰC THÔNG TIN SẢN PHẨM
+========================= */
+
+/* Cột bên phải: chứa thông tin chi tiết */
+.detail-info h1 {
+    font-size: 34px;                /* Cỡ chữ 34px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+    color: #222;                    /* Màu gần đen */
+}
+
+/* =========================
+   RATING - ĐÁNH GIÁ SAO
+========================= */
+
+/* Khung đánh giá sao */
+.rating {
+    color: #ff9900;                 /* Màu vàng cam (cho sao) */
+    font-size: 18px;                /* Cỡ chữ 18px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+}
+
+/* Số lượng đánh giá (nằm trong span) */
+.rating span {
+    color: #666;                    /* Màu xám */
+    font-size: 15px;                /* Cỡ chữ 15px */
+}
+
+/* =========================
+   PRICE - GIÁ SẢN PHẨM
+========================= */
+
+/* Giá sản phẩm */
+.price {
+    color: #ff3300;                 /* Màu đỏ cam (nổi bật) */
+    font-size: 38px;                /* Cỡ chữ lớn 38px */
+    font-weight: bold;              /* Chữ đậm */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+}
+
+/* =========================
+   STATUS - TRẠNG THÁI TỒN KHO
+========================= */
+
+/* Khung hiển thị trạng thái (còn hàng / hết hàng) */
+.status {
+    display: inline-block;          /* Hiển thị dạng inline-block (không chiếm full width) */
+    background: #dcfce7;            /* Nền xanh lá rất nhạt */
+    color: #16a34a;                 /* Chữ xanh lá đậm */
+    padding: 10px 16px;             /* Đệm trên dưới 10px, trái phải 16px */
+    border-radius: 10px;            /* Bo góc 10px */
+    font-weight: bold;              /* Chữ đậm */
+    margin-bottom: 30px;            /* Khoảng cách dưới 30px */
+    margin: 15px 0;                 /* Lề trên dưới 15px (ghi đè margin-bottom) */
+    font-size: 18px;                /* Cỡ chữ 18px */
+}
+
+/* Trạng thái: Còn hàng */
+.conhang {
+    color: #28a745;                 /* Màu xanh lá */
+}
+
+/* Trạng thái: Hết hàng */
+.hethang {
+    color: red;                     /* Màu đỏ */
+}
+
+/* =========================
+   DESCRIPTION - MÔ TẢ SẢN PHẨM
+========================= */
+
+/* Khung mô tả sản phẩm */
+.description h3 {
+    margin-bottom: 15px;            /* Khoảng cách dưới 15px */
+    color: #ff6600;                 /* Màu cam */
+}
+
+/* Đoạn văn mô tả */
+.description p {
+    line-height: 1.8;               /* Chiều cao dòng 1.8 (tạo khoảng cách giữa các dòng) */
+    color: #444;                    /* Màu xám đậm */
+    margin-bottom: 35px;            /* Khoảng cách dưới 35px */
+}
+
+/* =========================
+   BUTTON - NÚT THÊM VÀO GIỎ / MUA NGAY
+========================= */
+
+/* Nút thêm vào giỏ hàng */
+.btn-cart {
+    width: 100%;                    /* Chiều rộng 100% khung cha */
+    padding: 18px;                  /* Đệm 18px */
+    border: none;                   /* Không viền */
+    border-radius: 12px;            /* Bo góc 12px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 18px;                /* Cỡ chữ 18px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút thêm vào giỏ */
+.btn-cart:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: translateY(-2px);    /* Nhấc lên trên 2px */
+}
+
+/* Nút mua ngay (thêm mới) */
+.btn-buy {
+    width: 100%;                    /* Chiều rộng 100% khung cha */
+    margin-top: 15px;               /* Khoảng cách trên 15px (cách nút thêm vào giỏ) */
+    padding: 15px;                  /* Đệm 15px */
+    border: none;                   /* Không viền */
+    border-radius: 12px;            /* Bo góc 12px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 18px;                /* Cỡ chữ 18px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút mua ngay */
+.btn-buy:hover {
+    background: #e65100;            /* Nền cam đậm hơn (màu đậm hơn e65c00) */
+}
+
+/* =========================
+   DISABLED BUTTON - NÚT BỊ VÔ HIỆU HÓA
+========================= */
+
+/* Nút bị vô hiệu hóa (khi sản phẩm hết hàng) */
+.disabled-btn {
+    background: #999 !important;    /* Nền xám (gắn important để ghi đè) */
+    cursor: not-allowed;            /* Con trỏ chuột thành biểu tượng cấm */
+    opacity: 0.6;                   /* Làm mờ 60% */
+    pointer-events: none;           /* Vô hiệu hóa mọi sự kiện chuột (không thể click) */
+}
+
+/* =========================
+   LOGO LINK - ĐƯỜNG DẪN LOGO
+========================= */
+
+/* Link bọc logo (quay về trang chủ) */
+.logo-link {
+    text-decoration: none;          /* Bỏ gạch chân */
+    color: white;                   /* Chữ trắng */
+    font-size: 32px;                /* Cỡ chữ 32px */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* =========================
+   RESPONSIVE - GIAO DIỆN THÍCH ỨNG
+========================= */
+
+/* Màn hình có chiều rộng <= 900px (máy tính bảng) */
+@media (max-width: 900px) {
+    
+    /* Container chuyển từ 2 cột thành 1 cột */
+    .detail-container {
+        grid-template-columns: 1fr; /* 1 cột duy nhất (ảnh trên, thông tin dưới) */
+    }
+    
+    /* Ảnh sản phẩm nhỏ lại */
+    .detail-image img {
+        height: 300px;              /* Chiều cao 300px (giảm từ 450px) */
+    }
+    
+    /* Tiêu đề sản phẩm nhỏ lại */
+    .detail-info h1 {
+        font-size: 28px;            /* Cỡ chữ 28px (giảm từ 34px) */
+    }
+    
+    /* Giá sản phẩm nhỏ lại */
+    .price {
+        font-size: 32px;            /* Cỡ chữ 32px (giảm từ 38px) */
+    }
+}

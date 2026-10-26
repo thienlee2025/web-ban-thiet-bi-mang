@@ -1,0 +1,243 @@
+/* =========================
+   REGISTER PAGE - TECH SHOP
+   TRANG ĐĂNG KÝ - CỬA HÀNG THIẾT BỊ MẠNG
+========================= */
+
+/* =========================
+   RESET CSS - XÓA MẶC ĐỊNH TRÌNH DUYỆT
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;                      /* Xóa lề ngoài mặc định */
+    padding: 0;                     /* Xóa khoảng đệm mặc định */
+    box-sizing: border-box;         /* Padding/border không làm tăng kích thước phần tử */
+    font-family: Arial, Helvetica, sans-serif; /* Font chữ mặc định */
+}
+
+/* =========================
+   BODY - NỀN VÀ CANH GIỮA
+========================= */
+
+/* Phần body của trang */
+body {
+    background: #f5f5f5;            /* Màu nền xám nhạt */
+    min-height: 100vh;              /* Chiều cao tối thiểu bằng toàn bộ màn hình */
+    display: flex;                  /* Dùng flex để canh giữa nội dung */
+    justify-content: center;        /* Canh giữa theo chiều ngang */
+    align-items: center;            /* Canh giữa theo chiều dọc */
+    padding: 40px 20px;             /* Đệm trên dưới 40px, trái phải 20px (form không bị sát mép) */
+}
+
+/* =========================
+   REGISTER BOX - THỂ FORM ĐĂNG KÝ
+========================= */
+
+/* Thẻ trắng chứa form đăng ký */
+.register-box {
+    width: 420px;                   /* Chiều rộng cố định 420px (rộng hơn login 20px) */
+    background: white;              /* Nền trắng */
+    padding: 40px;                  /* Đệm trong 40px */
+    border-radius: 18px;            /* Bo góc 18px (bo tròn) */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08); /* Đổ bóng nhẹ phía dưới */
+    animation: fadeIn 0.4s ease;    /* Hiệu ứng xuất hiện fadeIn trong 0.4 giây */
+}
+
+/* =========================
+   TITLE - TIÊU ĐỀ TRANG ĐĂNG KÝ
+========================= */
+
+/* Tiêu đề h2 (ĐĂNG KÝ) */
+h2 {
+    text-align: center;             /* Canh giữa chữ */
+    color: #ff6600;                 /* Màu cam (màu thương hiệu) */
+    margin-bottom: 30px;            /* Khoảng cách dưới 30px (cách form) */
+    font-size: 34px;                /* Cỡ chữ 34px (nổi bật) */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* =========================
+   ERROR MESSAGE - THÔNG BÁO LỖI
+========================= */
+
+/* Thẻ p (thông báo lỗi đăng ký - sai thông tin, trùng email, v.v) */
+p {
+    background: #fff3f3;            /* Nền đỏ rất nhạt (màu hồng nhạt) */
+    color: #e53935;                 /* Chữ đỏ đậm */
+    padding: 12px 15px;             /* Đệm trên dưới 12px, trái phải 15px */
+    border-radius: 10px;            /* Bo góc 10px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px (cách form) */
+    font-size: 14px;                /* Cỡ chữ 14px */
+    border: 1px solid #ffcdd2;      /* Viền đỏ nhạt 1px */
+}
+
+/* =========================
+   ERROR BOX - HỘP THÔNG BÁO LỖI (KIỂU THAY THẾ)
+========================= */
+
+/* Hộp thông báo lỗi (cách viết khác, có canh giữa) */
+.error-box {
+    background: #fff3f3;            /* Nền đỏ rất nhạt */
+    color: #e53935;                 /* Chữ đỏ đậm */
+    padding: 12px 15px;             /* Đệm trên dưới 12px, trái phải 15px */
+    border-radius: 10px;            /* Bo góc 10px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+    font-size: 14px;                /* Cỡ chữ 14px */
+    border: 1px solid #ffcdd2;      /* Viền đỏ nhạt 1px */
+    text-align: center;             /* Canh giữa chữ (khác với p) */
+}
+
+/* =========================
+   FORM - BIỂU MẪU NHẬP THÔNG TIN
+========================= */
+
+/* Form đăng ký */
+form {
+    display: flex;                  /* Dùng flex */
+    flex-direction: column;         /* Xếp các trường theo cột dọc */
+    gap: 18px;                      /* Khoảng cách giữa các trường nhập 18px */
+}
+
+/* =========================
+   INPUT - Ô NHẬP THÔNG TIN
+========================= */
+
+/* Các ô input và textarea trong form (họ tên, email, mật khẩu, địa chỉ) */
+form input,
+form textarea {
+    width: 100%;                    /* Chiều rộng 100% form */
+    padding: 14px;                  /* Đệm 14px (tạo cảm giác thoáng) */
+    border: 1px solid #ddd;         /* Viền xám mờ dày 1px */
+    border-radius: 12px;            /* Bo góc 12px */
+    font-size: 15px;                /* Cỡ chữ 15px */
+    outline: none;                  /* Bỏ viền xanh mặc định khi focus */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+    background: #fff;               /* Nền trắng */
+}
+
+/* =========================
+   TEXTAREA - Ô NHẬP ĐỊA CHỈ DÀI
+========================= */
+
+/* Ô textarea (thường dùng cho địa chỉ chi tiết) */
+form textarea {
+    resize: none;                   /* Không cho phép kéo thay đổi kích thước */
+    height: 90px;                   /* Chiều cao cố định 90px */
+}
+
+/* =========================
+   FOCUS - HIỆU ỨNG KHI NHẤP VÀO Ô NHẬP
+========================= */
+
+/* Khi người dùng focus vào input hoặc textarea (đang nhập liệu) */
+form input:focus,
+form textarea:focus {
+    border-color: #ff6600;          /* Đổi viền thành màu cam */
+    box-shadow: 0 0 5px rgba(255,102,0,0.25); /* Đổ bóng cam mờ xung quanh */
+}
+
+/* =========================
+   BUTTON - NÚT ĐĂNG KÝ
+========================= */
+
+/* Nút "Đăng ký" */
+form button {
+    padding: 14px;                  /* Đệm 14px */
+    border: none;                   /* Không viền */
+    border-radius: 12px;            /* Bo góc 12px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 16px;                /* Cỡ chữ 16px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút đăng ký */
+form button:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: translateY(-2px);    /* Nhấc lên trên 2px (hiệu ứng nổi) */
+}
+
+/* =========================
+   LOGIN LINK - ĐƯỜNG DẪN ĐẾN TRANG ĐĂNG NHẬP (CÁCH 1)
+========================= */
+
+/* Link "Đã có tài khoản? Đăng nhập" (dạng thẻ a đơn giản) */
+a {
+    display: block;                 /* Hiển thị dạng block (xuống dòng) */
+    text-align: center;             /* Canh giữa chữ */
+    margin-top: 22px;               /* Khoảng cách trên 22px (cách nút đăng ký) */
+    color: #ff6600;                 /* Màu cam */
+    text-decoration: none;          /* Bỏ gạch chân mặc định */
+    font-weight: bold;              /* Chữ đậm */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào link đăng nhập */
+a:hover {
+    color: #e65c00;                 /* Màu cam đậm hơn */
+    text-decoration: underline;     /* Thêm gạch chân khi hover */
+}
+
+/* =========================
+   LOGIN LINK - ĐƯỜNG DẪN ĐẾN TRANG ĐĂNG NHẬP (CÁCH 2 - CHI TIẾT HƠN)
+========================= */
+
+/* Khung chứa link đăng nhập (dạng div) */
+.login-link {
+    margin-top: 22px;               /* Khoảng cách trên 22px */
+    text-align: center;             /* Canh giữa chữ */
+    font-size: 15px;                /* Cỡ chữ 15px */
+    color: #555;                    /* Màu xám */
+}
+
+/* Link đăng nhập bên trong khung login-link */
+.login-link a {
+    color: #ff6600;                 /* Màu cam */
+    text-decoration: none;          /* Bỏ gạch chân mặc định */
+    font-weight: bold;              /* Chữ đậm */
+    margin-left: 5px;               /* Khoảng cách trái 5px (cách text "Đã có tài khoản?") */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào link đăng nhập trong login-link */
+.login-link a:hover {
+    color: #e65c00;                 /* Màu cam đậm hơn */
+    text-decoration: underline;     /* Thêm gạch chân khi hover */
+}
+
+/* =========================
+   ANIMATION - HIỆU ỨNG XUẤT HIỆN
+========================= */
+
+/* Định nghĩa hiệu ứng fadeIn (mờ dần + trượt lên) */
+@keyframes fadeIn {
+    from {                          /* Trạng thái bắt đầu */
+        opacity: 0;                 /* Trong suốt hoàn toàn */
+        transform: translateY(20px); /* Dịch xuống dưới 20px */
+    }
+    to {                            /* Trạng thái kết thúc */
+        opacity: 1;                 /* Hiện rõ hoàn toàn */
+        transform: translateY(0);   /* Về vị trí ban đầu */
+    }
+}
+
+/* =========================
+   RESPONSIVE - GIAO DIỆN THÍCH ỨNG
+========================= */
+
+/* Màn hình có chiều rộng <= 500px (điện thoại nhỏ) */
+@media (max-width: 500px) {
+    
+    /* Thẻ đăng ký chiếm toàn bộ chiều rộng */
+    .register-box {
+        width: 100%;                /* Chiều rộng 100% (thay vì 420px cố định) */
+        padding: 30px 20px;         /* Giảm đệm: trên dưới 30px, trái phải 20px */
+    }
+    
+    /* Tiêu đề nhỏ lại cho vừa màn hình */
+    h2 {
+        font-size: 28px;            /* Cỡ chữ 28px (giảm từ 34px) */
+    }
+}

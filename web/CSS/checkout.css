@@ -1,0 +1,221 @@
+/* =========================
+   CHECKOUT PAGE - TECH SHOP
+   TRANG THANH TOÁN - CỬA HÀNG THIẾT BỊ MẠNG
+========================= */
+
+/* =========================
+   RESET CSS - XÓA MẶC ĐỊNH TRÌNH DUYỆT
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;                      /* Xóa lề ngoài mặc định */
+    padding: 0;                     /* Xóa khoảng đệm mặc định */
+    box-sizing: border-box;         /* Padding/border không làm tăng kích thước phần tử */
+    font-family: Arial, Helvetica, sans-serif; /* Font chữ mặc định */
+}
+
+/* Phần body của trang */
+body {
+    background: #f5f5f5;            /* Màu nền xám nhạt */
+}
+
+/* =========================
+   CONTAINER - KHUNG CHỨA TOÀN BỘ TRANG
+========================= */
+
+/* Khung chứa chính của trang thanh toán */
+.checkout-container {
+    width: 100%;                    /* Chiều rộng toàn màn hình */
+    min-height: 100vh;              /* Chiều cao tối thiểu bằng toàn bộ màn hình */
+    display: flex;                  /* Dùng flex để canh giữa nội dung */
+    justify-content: center;        /* Canh giữa theo chiều ngang */
+    align-items: center;            /* Canh giữa theo chiều dọc */
+    padding: 40px 20px;             /* Đệm trên dưới 40px, trái phải 20px */
+}
+
+/* =========================
+   CHECKOUT CARD - THẺ FORM THANH TOÁN
+========================= */
+
+/* Thẻ trắng chứa form thanh toán */
+.checkout-card {
+    width: 450px;                   /* Chiều rộng cố định 450px (form vừa phải) */
+    background: white;              /* Nền trắng */
+    padding: 40px;                  /* Đệm trong 40px */
+    border-radius: 18px;            /* Bo góc 18px (bo tròn) */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+    animation: fadeIn 0.4s ease;    /* Hiệu ứng xuất hiện fadeIn trong 0.4s */
+}
+
+/* =========================
+   TITLE - TIÊU ĐỀ TRANG THANH TOÁN
+========================= */
+
+/* Tiêu đề h2 trong thẻ thanh toán */
+.checkout-card h2 {
+    text-align: center;             /* Canh giữa chữ */
+    margin-bottom: 30px;            /* Khoảng cách dưới 30px */
+    color: #ff6600;                 /* Màu cam (thương hiệu) */
+    font-size: 34px;                /* Cỡ chữ 34px */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* =========================
+   FORM - BIỂU MẪU NHẬP THÔNG TIN
+========================= */
+
+/* Form bên trong thẻ thanh toán */
+.checkout-card form {
+    display: flex;                  /* Dùng flex */
+    flex-direction: column;         /* Xếp các phần tử theo cột dọc */
+    gap: 18px;                      /* Khoảng cách giữa các trường 18px */
+}
+
+/* =========================
+   LABEL - NHÃN CỦA TRƯỜNG NHẬP
+========================= */
+
+/* Thẻ label (tên trường: Họ tên, SĐT, Địa chỉ...) */
+.checkout-card label {
+    font-size: 15px;                /* Cỡ chữ 15px */
+    font-weight: bold;              /* Chữ đậm */
+    color: #333;                    /* Màu xám đậm */
+    margin-bottom: -8px;            /* Khoảng cách dưới âm 8px (kéo label lại gần input hơn) */
+}
+
+/* =========================
+   INPUT - Ô NHẬP, TEXTAREA, SELECT
+========================= */
+
+/* Các trường nhập liệu: input, textarea, select */
+.checkout-card input,
+.checkout-card textarea,
+.checkout-card select {
+    width: 100%;                    /* Chiều rộng 100% (full chiều rộng form) */
+    padding: 14px;                  /* Đệm trong 14px */
+    border: 1px solid #ddd;         /* Viền xám mờ dày 1px */
+    border-radius: 12px;            /* Bo góc 12px */
+    font-size: 15px;                /* Cỡ chữ 15px */
+    outline: none;                  /* Bỏ viền xanh khi focus (sẽ dùng border-color thay thế) */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+    background: white;              /* Nền trắng */
+}
+
+/* =========================
+   TEXTAREA - Ô NHẬP ĐỊA CHỈ DÀI
+========================= */
+
+/* Ô textarea (thường dùng cho địa chỉ chi tiết) */
+.checkout-card textarea {
+    resize: none;                   /* Không cho phép người dùng kéo thay đổi kích thước */
+    height: 100px;                  /* Chiều cao cố định 100px */
+}
+
+/* =========================
+   FOCUS - HIỆU ỨNG KHI NHẤP VÀO Ô NHẬP
+========================= */
+
+/* Khi người dùng focus vào input, textarea hoặc select */
+.checkout-card input:focus,
+.checkout-card textarea:focus,
+.checkout-card select:focus {
+    border-color: #ff6600;          /* Đổi viền thành màu cam */
+    box-shadow: 0 0 5px rgba(255,102,0,0.25); /* Đổ bóng cam mờ xung quanh */
+}
+
+/* =========================
+   TOTAL - KHUNG HIỂN THỊ TỔNG TIỀN
+========================= */
+
+/* Khung hiển thị tổng số tiền cần thanh toán */
+.total-box {
+    background: #fff7f0;            /* Nền cam rất nhạt */
+    border: 1px solid #ffd7b8;      /* Viền cam nhạt */
+    padding: 15px;                  /* Đệm 15px */
+    border-radius: 12px;            /* Bo góc 12px */
+    text-align: center;             /* Canh giữa chữ */
+    margin-top: 5px;                /* Khoảng cách trên 5px */
+    font-size: 20px;                /* Cỡ chữ 20px */
+    font-weight: bold;              /* Chữ đậm */
+    color: #ff6600;                 /* Màu chữ cam */
+}
+
+/* =========================
+   BUTTON - NÚT XÁC NHẬN THANH TOÁN
+========================= */
+
+/* Nút đặt hàng / xác nhận thanh toán */
+.checkout-card button {
+    padding: 15px;                  /* Đệm 15px */
+    border: none;                   /* Không viền */
+    border-radius: 12px;            /* Bo góc 12px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 16px;                /* Cỡ chữ 16px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút thanh toán */
+.checkout-card button:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: translateY(-2px);    /* Nhấc lên trên 2px (tạo hiệu ứng nổi) */
+}
+
+/* =========================
+   BACK LINK - ĐƯỜNG DẪN QUAY LẠI GIỎ HÀNG
+========================= */
+
+/* Link quay lại trang giỏ hàng */
+.back-link {
+    display: block;                 /* Hiển thị dạng block (xuống dòng) */
+    text-align: center;             /* Canh giữa chữ */
+    margin-top: 20px;               /* Khoảng cách trên 20px */
+    color: #ff6600;                 /* Màu cam */
+    text-decoration: none;          /* Bỏ gạch chân mặc định */
+    font-weight: bold;              /* Chữ đậm */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào link quay lại */
+.back-link:hover {
+    color: #e65c00;                 /* Màu cam đậm hơn */
+    text-decoration: underline;     /* Thêm gạch chân khi hover */
+}
+
+/* =========================
+   ANIMATION - HIỆU ỨNG XUẤT HIỆN
+========================= */
+
+/* Định nghĩa hiệu ứng fadeIn (mờ dần + trượt lên) */
+@keyframes fadeIn {
+    from {                          /* Trạng thái bắt đầu */
+        opacity: 0;                 /* Trong suốt hoàn toàn */
+        transform: translateY(20px); /* Dịch xuống dưới 20px */
+    }
+    to {                            /* Trạng thái kết thúc */
+        opacity: 1;                 /* Hiện rõ hoàn toàn */
+        transform: translateY(0);   /* Về vị trí ban đầu */
+    }
+}
+
+/* =========================
+   RESPONSIVE - GIAO DIỆN THÍCH ỨNG
+========================= */
+
+/* Màn hình có chiều rộng <= 500px (điện thoại nhỏ) */
+@media (max-width: 500px) {
+    
+    /* Thẻ thanh toán chiếm toàn bộ chiều rộng */
+    .checkout-card {
+        width: 100%;                /* Chiều rộng 100% (thay vì 450px cố định) */
+        padding: 30px 20px;         /* Giảm đệm: trên dưới 30px, trái phải 20px */
+    }
+    
+    /* Tiêu đề nhỏ lại cho vừa màn hình */
+    .checkout-card h2 {
+        font-size: 28px;            /* Cỡ chữ 28px (giảm từ 34px) */
+    }
+}

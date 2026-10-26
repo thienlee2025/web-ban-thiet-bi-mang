@@ -1,0 +1,366 @@
+/* =========================
+   RESET - XÓA MẶC ĐỊNH TRÌNH DUYỆT
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;                      /* Xóa lề ngoài mặc định */
+    padding: 0;                     /* Xóa khoảng đệm mặc định */
+    box-sizing: border-box;         /* Padding/border không làm tăng kích thước phần tử */
+    font-family: Arial, Helvetica, sans-serif; /* Font chữ mặc định */
+}
+
+/* =========================
+   BODY - NỀN TRANG
+========================= */
+
+/* Phần body của trang */
+body {
+    /* Nền gradient chuyển động (hiệu ứng màu nền thay đổi liên tục) */
+    background: linear-gradient(
+        -45deg,                     /* Góc gradient -45 độ */
+        #fff7f0,                    /* Màu kem nhạt */
+        #ffe0b2,                    /* Màu cam nhạt */
+        #fff3e0,                    /* Màu vàng kem */
+        #ffffff);                   /* Màu trắng */
+    background-size: 400% 400%;     /* Kích thước nền lớn hơn để tạo hiệu ứng di chuyển */
+    animation: bgMove 12s ease infinite; /* Chạy animation bgMove trong 12s, lặp vô hạn */
+}
+
+/* =========================
+   TOPBAR - THANH THÔNG BÁO TRÊN CÙNG
+========================= */
+
+/* Thanh thông báo phía trên cùng */
+.topbar {
+    background: #111;               /* Nền đen */
+    color: white;                   /* Chữ trắng */
+    text-align: center;             /* Canh giữa chữ */
+    padding: 8px;                   /* Khoảng đệm 8px */
+    font-size: 14px;                /* Cỡ chữ 14px */
+}
+
+/* =========================
+   HEADER - PHẦN ĐẦU TRANG
+========================= */
+
+/* Header chứa logo và các nút chức năng */
+.header {
+    background: white;              /* Nền trắng */
+    display: flex;                  /* Dùng flex để sắp xếp */
+    justify-content: space-between; /* Canh 2 đầu: logo trái, header-right phải */
+    align-items: center;            /* Canh giữa theo chiều dọc */
+    padding: 15px 40px;             /* Đệm trên dưới 15px, trái phải 40px */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Đổ bóng nhẹ phía dưới */
+    position: sticky;               /* Dính khi cuộn trang */
+    top: 0;                         /* Dính ở vị trí trên cùng */
+    z-index: 1000;                  /* Độ ưu tiên hiển thị cao */
+}
+
+/* Đường dẫn logo */
+.logo-link {
+    text-decoration: none;          /* Bỏ gạch chân */
+    color: #ff6600;                 /* Màu cam */
+    font-size: 32px;                /* Cỡ chữ 32px */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* Khu vực bên phải header (chứa các link: đăng nhập, đăng ký, giỏ hàng...) */
+.header-right {
+    display: flex;                  /* Dùng flex */
+    gap: 20px;                      /* Khoảng cách giữa các link 20px */
+    align-items: center;            /* Canh giữa chiều dọc */
+}
+
+/* Các link trong header-right */
+.header-right a {
+    text-decoration: none;          /* Bỏ gạch chân */
+    color: #333;                    /* Màu xám đậm */
+    font-weight: bold;              /* Chữ đậm */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào link header-right */
+.header-right a:hover {
+    color: #ff6600;                 /* Đổi thành màu cam */
+}
+
+/* =========================
+   MENU - THANH MENU CHÍNH
+========================= */
+
+/* Thanh menu chính (danh mục sản phẩm) */
+.menu {
+    background: #ff6600;            /* Nền cam */
+    padding: 12px;                  /* Đệm 12px */
+    display: flex;                  /* Dùng flex */
+    justify-content: center;        /* Canh giữa các mục */
+    gap: 30px;                      /* Khoảng cách giữa các mục 30px */
+    flex-wrap: wrap;                /* Tự động xuống dòng nếu không đủ chỗ */
+}
+
+/* Các link trong menu */
+.menu a {
+    color: white;                   /* Chữ trắng */
+    text-decoration: none;          /* Bỏ gạch chân */
+    font-weight: bold;              /* Chữ đậm */
+    padding: 8px 14px;              /* Đệm trên dưới 8px, trái phải 14px */
+    border-radius: 8px;             /* Bo góc 8px */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào link menu */
+.menu a:hover {
+    background: white;              /* Nền trắng */
+    color: #ff6600;                 /* Chữ cam */
+}
+
+/* Link menu đang active (đang ở trang đó) */
+.menu a.active {
+    background: #2563eb;            /* Nền xanh dương */
+    color: white;                   /* Chữ trắng */
+}
+
+/* =========================
+   CONTACT CONTAINER - KHUNG CHỨA TRANG LIÊN HỆ
+========================= */
+
+/* Khung chứa toàn bộ nội dung trang liên hệ */
+.contact-container {
+    width: 100%;                    /* Chiều rộng toàn màn hình */
+    min-height: 80vh;               /* Chiều cao tối thiểu 80% màn hình */
+    display: flex;                  /* Dùng flex để canh giữa */
+    justify-content: center;        /* Canh giữa theo chiều ngang */
+    align-items: center;            /* Canh giữa theo chiều dọc */
+    padding: 50px 20px;             /* Đệm trên dưới 50px, trái phải 20px */
+}
+
+/* =========================
+   CONTACT BOX - THẺ FORM LIÊN HỆ
+========================= */
+
+/* Thẻ trắng chứa form liên hệ */
+.contact-box {
+    width: 100%;                    /* Chiều rộng 100% trong giới hạn của container */
+    max-width: 600px;               /* Chiều rộng tối đa 600px (không to quá) */
+    background: white;              /* Nền trắng */
+    padding: 40px;                  /* Đệm trong 40px */
+    border-radius: 20px;            /* Bo góc 20px */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12); /* Đổ bóng đậm hơn một chút */
+    animation: fadeIn 0.5s ease;    /* Hiệu ứng xuất hiện fadeIn trong 0.5s */
+}
+
+/* =========================
+   TITLE - TIÊU ĐỀ FORM LIÊN HỆ
+========================= */
+
+/* Tiêu đề h2 trong form */
+.contact-box h2 {
+    text-align: center;             /* Canh giữa chữ */
+    margin-bottom: 30px;            /* Khoảng cách dưới 30px */
+    color: #111827;                 /* Màu xanh đen đậm */
+    font-size: 32px;                /* Cỡ chữ 32px */
+}
+
+/* Icon trong tiêu đề (Font Awesome) */
+.contact-box h2 i {
+    color: #ff6600;                 /* Màu cam */
+    margin-right: 10px;             /* Khoảng cách phải 10px (cách chữ) */
+}
+
+/* =========================
+   INPUT - Ô NHẬP LIỆU
+========================= */
+
+/* Các ô input và textarea trong form */
+.contact-box input,
+.contact-box textarea {
+    width: 100%;                    /* Chiều rộng 100% form */
+    padding: 15px;                  /* Đệm 15px */
+    margin-bottom: 18px;            /* Khoảng cách dưới 18px (cách ô tiếp theo) */
+    border: 2px solid #e5e7eb;      /* Viền xám mờ dày 2px */
+    border-radius: 12px;            /* Bo góc 12px */
+    font-size: 15px;                /* Cỡ chữ 15px */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Khi focus vào input hoặc textarea */
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border-color: #ff6600;          /* Viền đổi thành màu cam */
+    outline: none;                  /* Bỏ viền xanh mặc định của trình duyệt */
+    box-shadow: 0 0 0 4px rgba(255,102,0,0.15); /* Đổ bóng cam mờ bên ngoài (hiệu ứng glow) */
+}
+
+/* =========================
+   TEXTAREA - Ô NHẬP NỘI DUNG DÀI
+========================= */
+
+/* Ô textarea (dùng để nhập nội dung tin nhắn) */
+.contact-box textarea {
+    resize: none;                   /* Không cho phép kéo thay đổi kích thước */
+    min-height: 130px;              /* Chiều cao tối thiểu 130px */
+}
+
+/* =========================
+   BUTTON - NÚT GỬI LIÊN HỆ
+========================= */
+
+/* Nút gửi form liên hệ */
+.contact-box button {
+    width: 100%;                    /* Chiều rộng 100% form */
+    padding: 15px;                  /* Đệm 15px */
+    border: none;                   /* Không viền */
+    border-radius: 12px;            /* Bo góc 12px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 17px;                /* Cỡ chữ 17px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút gửi */
+.contact-box button:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: translateY(-3px);    /* Nhấc lên trên 3px (hiệu ứng nổi) */
+}
+
+/* =========================
+   SUCCESS - THÔNG BÁO THÀNH CÔNG
+========================= */
+
+/* Thông báo khi gửi liên hệ thành công */
+.success {
+    background: #dcfce7;            /* Nền xanh lá rất nhạt */
+    color: #166534;                 /* Chữ xanh lá đậm */
+    padding: 14px;                  /* Đệm 14px */
+    border-radius: 10px;            /* Bo góc 10px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+    text-align: center;             /* Canh giữa chữ */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* =========================
+   ERROR - THÔNG BÁO LỖI
+========================= */
+
+/* Thông báo khi gửi liên hệ thất bại hoặc lỗi nhập liệu */
+.error {
+    background: #fee2e2;            /* Nền đỏ rất nhạt */
+    color: #dc2626;                 /* Chữ đỏ đậm */
+    padding: 14px;                  /* Đệm 14px */
+    border-radius: 10px;            /* Bo góc 10px */
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+    text-align: center;             /* Canh giữa chữ */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* =========================
+   FOOTER - CHÂN TRANG
+========================= */
+
+/* Footer chân trang */
+.footer {
+    background: #111;               /* Nền đen */
+    color: white;                   /* Chữ trắng */
+    margin-top: 40px;               /* Lề trên 40px */
+    padding: 40px 10%;              /* Đệm trên dưới 40px, trái phải 10% */
+}
+
+/* Nội dung bên trong footer (chia cột) */
+.footer-content {
+    display: grid;                  /* Dùng Grid Layout */
+    grid-template-columns: repeat(3, 1fr); /* Chia 3 cột bằng nhau */
+    gap: 40px;                      /* Khoảng cách giữa các cột 40px */
+}
+
+/* Tiêu đề trong footer (h3) */
+.footer h3 {
+    color: #ff6600;                 /* Màu cam */
+    margin-bottom: 15px;            /* Khoảng cách dưới 15px */
+}
+
+/* Đoạn văn trong footer */
+.footer p {
+    margin-bottom: 8px;             /* Khoảng cách dưới 8px */
+}
+
+/* Đường kẻ ngang */
+hr {
+    margin: 25px 0;                 /* Lề trên dưới 25px */
+    border-color: #333;             /* Màu viền xám đậm */
+}
+
+/* Bản quyền (dòng cuối cùng) */
+.copyright {
+    text-align: center;             /* Canh giữa chữ */
+    color: #ccc;                    /* Màu xám nhạt */
+}
+
+/* =========================
+   ANIMATION - HIỆU ỨNG CHUYỂN ĐỘNG
+========================= */
+
+/* Hiệu ứng fadeIn (mờ dần + trượt lên) cho form liên hệ */
+@keyframes fadeIn {
+    from {                          /* Trạng thái bắt đầu */
+        opacity: 0;                 /* Trong suốt hoàn toàn */
+        transform: translateY(20px); /* Dịch xuống dưới 20px */
+    }
+    to {                            /* Trạng thái kết thúc */
+        opacity: 1;                 /* Hiện rõ hoàn toàn */
+        transform: translateY(0);   /* Về vị trí ban đầu */
+    }
+}
+
+/* Hiệu ứng di chuyển nền gradient */
+@keyframes bgMove {
+    0% {                            /* Bắt đầu */
+        background-position: 0% 50%; /* Vị trí góc trên bên trái */
+    }
+    50% {                           /* Giữa */
+        background-position: 100% 50%; /* Di chuyển sang phải */
+    }
+    100% {                          /* Kết thúc */
+        background-position: 0% 50%; /* Quay về vị trí ban đầu */
+    }
+}
+
+/* =========================
+   RESPONSIVE - GIAO DIỆN THÍCH ỨNG
+========================= */
+
+/* Màn hình có chiều rộng <= 900px (máy tính bảng) */
+@media (max-width: 900px) {
+    
+    /* Header xếp theo cột dọc */
+    .header {
+        flex-direction: column;     /* Xếp dọc thay vì ngang */
+        gap: 15px;                  /* Khoảng cách giữa các phần tử 15px */
+    }
+    
+    /* Footer chuyển thành 1 cột */
+    .footer-content {
+        grid-template-columns: 1fr; /* Từ 3 cột xuống 1 cột */
+    }
+}
+
+/* Màn hình có chiều rộng <= 600px (điện thoại) */
+@media (max-width: 600px) {
+    
+    /* Giảm đệm của form */
+    .contact-box {
+        padding: 25px;              /* Đệm 25px (giảm từ 40px) */
+    }
+    
+    /* Tiêu đề nhỏ lại */
+    .contact-box h2 {
+        font-size: 26px;            /* Cỡ chữ 26px (giảm từ 32px) */
+    }
+    
+    /* Giảm khoảng cách giữa các mục menu */
+    .menu {
+        gap: 10px;                  /* Khoảng cách 10px (giảm từ 30px) */
+    }
+}

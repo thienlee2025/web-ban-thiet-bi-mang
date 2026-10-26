@@ -1,0 +1,392 @@
+/* =========================
+   RESET - GỌN LẠI MẶC ĐỊNH CỦA TRÌNH DUYỆT
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;              /* Xóa khoảng cách lề ngoài mặc định */
+    padding: 0;             /* Xóa khoảng cách đệm mặc định */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước phần tử */
+    font-family: Arial, sans-serif; /* Font chữ mặc định cho toàn bộ trang */
+}
+
+/* Phần body của trang */
+body {
+    background: #f1f5f9;   /* Màu nền xám nhạt */
+    color: #333;            /* Màu chữ xám đậm */
+}
+
+/* =========================
+   ADMIN LAYOUT - BỐ CỤC ADMIN
+========================= */
+
+/* Container chính của trang admin (chứa sidebar + nội dung) */
+.admin-container {
+    display: flex;          /* Sử dụng flexbox để sidebar và content nằm cạnh nhau */
+}
+
+/* =========================
+   SIDEBAR - THANH MENU BÊN TRÁI
+========================= */
+
+/* Thanh menu dọc bên trái */
+.sidebar {
+    width: 260px;           /* Chiều rộng cố định 260px */
+    min-height: 100vh;      /* Chiều cao tối thiểu bằng toàn màn hình */
+    background: #0f172a;    /* Màu nền xanh đen đậm */
+    padding: 20px;          /* Khoảng đệm bên trong 20px */
+    position: fixed;        /* Cố định vị trí khi cuộn trang */
+    top: 0;                 /* Dính lên trên cùng */
+    left: 0;                /* Dính vào bên trái */
+}
+
+/* Logo trong sidebar */
+.logo {
+    color: white;           /* Màu chữ trắng */
+    font-size: 24px;        /* Cỡ chữ 24px */
+    font-weight: bold;      /* Chữ đậm */
+    margin-bottom: 40px;    /* Khoảng cách dưới logo 40px */
+    text-align: center;     /* Canh giữa */
+}
+
+/* Link (thẻ a) trong sidebar */
+.sidebar a {
+    display: flex;          /* Hiển thị dạng flex để icon và text nằm ngang */
+    align-items: center;    /* Canh giữa theo chiều dọc */
+    gap: 12px;              /* Khoảng cách giữa icon và text là 12px */
+    color: #cbd5e1;         /* Màu chữ xám nhạt */
+    text-decoration: none;  /* Bỏ gạch chân của link */
+    padding: 15px;          /* Khoảng đệm 15px xung quanh */
+    border-radius: 10px;    /* Bo góc 10px */
+    margin-bottom: 10px;    /* Khoảng cách dưới mỗi link 10px */
+    transition: 0.3s;       /* Hiệu ứng chuyển đổi mượt trong 0.3 giây */
+}
+
+/* Khi hover chuột vào link hoặc link đang active (đang ở trang hiện tại) */
+.sidebar a:hover,
+.sidebar .active {
+    background: #2563eb;    /* Nền xanh dương */
+    color: white;           /* Chữ màu trắng */
+}
+
+/* =========================
+   CONTENT - KHU VỰC NỘI DUNG CHÍNH
+========================= */
+
+/* Phần nội dung chính bên phải */
+.content {
+    margin-left: 260px;     /* Đẩy sang phải bằng đúng chiều rộng sidebar (260px) */
+    flex: 1;                /* Chiếm phần không gian còn lại */
+    padding: 30px;          /* Khoảng đệm bên trong 30px */
+}
+
+/* =========================
+   TOPBAR - THANH TIÊU ĐỀ PHÍA TRÊN
+========================= */
+
+/* Thanh tiêu đề phía trên cùng */
+.topbar {
+    display: flex;              /* Dùng flex để canh các phần tử */
+    justify-content: space-between; /* Canh 2 đầu: h1 bên trái, admin-info bên phải */
+    align-items: center;        /* Canh giữa theo chiều dọc */
+    margin-bottom: 30px;        /* Khoảng cách dưới topbar 30px */
+}
+
+/* Tiêu đề h1 trong topbar */
+.topbar h1 {
+    font-size: 32px;            /* Cỡ chữ 32px */
+    color: #0f172a;             /* Màu xanh đen đậm */
+}
+
+/* Thông tin admin (tên, avatar...) */
+.admin-info {
+    background: white;          /* Nền trắng */
+    padding: 12px 20px;         /* Đệm trên dưới 12px, trái phải 20px */
+    border-radius: 10px;        /* Bo góc 10px */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* =========================
+   CARDS - CÁC THẺ THỐNG KÊ
+========================= */
+
+/* Khung chứa các thẻ thống kê */
+.cards {
+    display: grid;                      /* Dùng Grid Layout */
+    grid-template-columns: repeat(4, 1fr); /* Chia 4 cột bằng nhau */
+    gap: 20px;                          /* Khoảng cách giữa các thẻ 20px */
+    margin-bottom: 30px;                /* Khoảng cách dưới 30px */
+}
+
+/* Mỗi thẻ thống kê */
+.card {
+    background: white;                  /* Nền trắng */
+    padding: 25px;                      /* Đệm trong 25px */
+    border-radius: 15px;                /* Bo góc 15px */
+    display: flex;                      /* Flex để canh nội dung */
+    justify-content: space-between;     /* Canh 2 đầu: số liệu bên trái, icon bên phải */
+    align-items: center;                /* Canh giữa chiều dọc */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+}
+
+/* Tiêu đề số liệu trong thẻ (ví dụ: 150 sản phẩm) */
+.card h2 {
+    font-size: 30px;                    /* Cỡ chữ lớn 30px */
+    color: #2563eb;                     /* Màu xanh dương */
+    margin-bottom: 10px;                /* Khoảng cách dưới 10px */
+}
+
+/* Chú thích bên dưới số liệu (ví dụ: "Tổng sản phẩm") */
+.card p {
+    color: #64748b;                     /* Màu xám ghi */
+}
+
+/* Icon trong thẻ (Font Awesome) */
+.card i {
+    font-size: 40px;                    /* Cỡ icon 40px */
+    color: #2563eb;                     /* Màu xanh dương */
+}
+
+/* =========================
+   TABLE BOX - KHUNG CHỨA BẢNG
+========================= */
+
+/* Khung bọc bảng dữ liệu */
+.table-box {
+    background: white;                  /* Nền trắng */
+    padding: 25px;                      /* Đệm trong 25px */
+    border-radius: 15px;                /* Bo góc 15px */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+}
+
+/* Tiêu đề bên trong khung bảng */
+.table-box h2 {
+    margin-bottom: 20px;                /* Khoảng cách dưới 20px */
+    color: #0f172a;                     /* Màu xanh đen đậm */
+}
+
+/* =========================
+   TABLE - BẢNG DỮ LIỆU
+========================= */
+
+/* Bảng */
+table {
+    width: 100%;                        /* Chiếm toàn bộ chiều rộng khung cha */
+    border-collapse: collapse;          /* Gộp đường viền của các ô lại */
+    background: white;                  /* Nền trắng */
+    overflow: hidden;                   /* Ẩn phần thừa ra ngoài */
+    border-radius: 12px;                /* Bo góc 12px */
+}
+
+/* Hàng th (header) của bảng */
+table th {
+    background: #2563eb;                /* Nền xanh dương */
+    color: white;                       /* Chữ trắng */
+    padding: 15px;                      /* Đệm 15px */
+    text-align: center;                 /* Canh giữa chữ */
+    font-size: 15px;                    /* Cỡ chữ 15px */
+}
+
+/* Ô dữ liệu (td) của bảng */
+table td {
+    padding: 15px;                      /* Đệm 15px */
+    border-bottom: 1px solid #eee;      /* Đường viền dưới mờ màu xám */
+    text-align: center;                 /* Canh giữa nội dung */
+    vertical-align: middle;             /* Canh giữa theo chiều dọc */
+}
+
+/* Hiệu ứng khi hover chuột vào hàng của bảng */
+table tr:hover {
+    background: #f8fafc;                /* Nền xám rất nhạt */
+}
+
+/* =========================
+   PRODUCT IMAGE - ẢNH SẢN PHẨM TRONG BẢNG
+========================= */
+
+/* Ảnh sản phẩm */
+.product-img {
+    width: 75px;                        /* Chiều rộng 75px */
+    height: 75px;                       /* Chiều cao 75px */
+    object-fit: cover;                  /* Cắt ảnh vừa khung mà không méo */
+    border-radius: 10px;                /* Bo góc 10px */
+    border: 1px solid #ddd;             /* Viền xám nhạt 1px */
+}
+
+/* =========================
+   PRODUCT NAME - TÊN SẢN PHẨM
+========================= */
+
+/* Tên sản phẩm */
+.product-name {
+    font-weight: bold;                  /* Chữ đậm */
+    color: #111827;                     /* Màu gần đen */
+}
+
+/* =========================
+   PRICE - GIÁ TIỀN
+========================= */
+
+/* Giá sản phẩm */
+.price {
+    color: #e53935;                     /* Màu đỏ (thường dùng cho giá) */
+    font-weight: bold;                  /* Chữ đậm */
+}
+
+/* =========================
+   TOTAL - TỔNG TIỀN
+========================= */
+
+/* Tổng tiền */
+.total {
+    color: #28a745;                     /* Màu xanh lá (thể hiện tiền lãi/tổng) */
+    font-weight: bold;                  /* Chữ đậm */
+}
+
+/* =========================
+   BUTTON ADD - NÚT THÊM MỚI
+========================= */
+
+/* Nút thêm mới */
+.add-btn {
+    background: #2563eb;                /* Nền xanh dương */
+    color: white;                       /* Chữ trắng */
+    padding: 12px 20px;                 /* Đệm trên dưới 12px, trái phải 20px */
+    text-decoration: none;              /* Bỏ gạch chân */
+    border-radius: 8px;                 /* Bo góc 8px */
+    display: inline-block;              /* Hiển thị dạng inline-block */
+    margin-bottom: 20px;                /* Khoảng cách dưới 20px */
+    transition: 0.3s;                   /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút thêm */
+.add-btn:hover {
+    background: #1d4ed8;                /* Nền xanh dương đậm hơn */
+}
+
+/* =========================
+   LINKS - ĐƯỜNG DẪN TRONG BẢNG (SỬA, XÓA...)
+========================= */
+
+/* Các link sửa/xóa trong bảng */
+table a {
+    text-decoration: none;              /* Bỏ gạch chân */
+    color: #2563eb;                     /* Màu xanh dương */
+    font-weight: bold;                  /* Chữ đậm */
+}
+
+/* =========================
+   ORDER STATUS - TRẠNG THÁI ĐƠN HÀNG
+========================= */
+
+/* Khung hiển thị trạng thái đơn hàng */
+.order-status {
+    padding: 6px 14px;                  /* Đệm trên dưới 6px, trái phải 14px */
+    border-radius: 20px;                /* Bo góc tròn (dạng viên thuốc) */
+    color: white;                       /* Chữ trắng */
+    font-size: 13px;                    /* Cỡ chữ 13px */
+    font-weight: bold;                  /* Chữ đậm */
+    display: inline-block;              /* Hiển thị dạng inline-block */
+}
+
+/* Trạng thái: Đang chờ xử lý */
+.pending {
+    background: #ff9800;                /* Màu cam */
+}
+
+/* Trạng thái: Đã xác nhận */
+.confirmed {
+    background: #2196f3;                /* Màu xanh dương nhạt */
+}
+
+/* Trạng thái: Đang giao hàng */
+.shipping {
+    background: #9c27b0;                /* Màu tím */
+}
+
+/* Trạng thái: Hoàn thành */
+.completed {
+    background: #28a745;                /* Màu xanh lá */
+}
+
+/* =========================
+   BACK BUTTON - NÚT QUAY LẠI
+========================= */
+
+/* Nút quay lại */
+.back-btn {
+    display: inline-flex;               /* Dùng flex inline để canh icon và text */
+    align-items: center;                /* Canh giữa chiều dọc */
+    gap: 10px;                          /* Khoảng cách giữa icon và text 10px */
+    background: #2563eb;                /* Nền xanh dương */
+    color: white !important;            /* Chữ trắng (gắn important để ghi đè) */
+    padding: 12px 22px;                 /* Đệm trên dưới 12px, trái phải 22px */
+    border-radius: 10px;                /* Bo góc 10px */
+    text-decoration: none;              /* Bỏ gạch chân */
+    font-weight: bold;                  /* Chữ đậm */
+    margin-bottom: 25px;                /* Khoảng cách dưới 25px */
+    transition: 0.3s;                   /* Hiệu ứng chuyển đổi 0.3s */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* Đổ bóng */
+}
+
+/* Hover vào nút quay lại */
+.back-btn:hover {
+    background: #1d4ed8;                /* Nền xanh đậm hơn */
+    transform: translateY(-2px);        /* Nhấc lên trên 2px (tạo hiệu ứng nổi) */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* Đổ bóng đậm hơn */
+}
+
+/* Icon trong nút quay lại */
+.back-btn i {
+    font-size: 15px;                    /* Cỡ icon 15px */
+    color: white;                       /* Màu trắng */
+}
+
+/* =========================
+   RESPONSIVE - GIAO DIỆN THÍCH ỨNG CÁC MÀN HÌNH KHÁC NHAU
+========================= */
+
+/* Màn hình có chiều rộng <= 1200px (máy tính bảng, laptop nhỏ) */
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* Chuyển thẻ thống kê từ 4 cột xuống 2 cột */
+    }
+}
+
+/* Màn hình có chiều rộng <= 768px (điện thoại, máy tính bảng dọc) */
+@media (max-width: 768px) {
+    /* Sidebar thu nhỏ lại */
+    .sidebar {
+        width: 100px;                   /* Chiều rộng chỉ còn 100px */
+    }
+
+    /* Link trong sidebar chỉ hiển thị icon, ẩn chữ */
+    .sidebar a {
+        justify-content: center;        /* Canh giữa nội dung */
+    }
+
+    .sidebar a span {
+        display: none;                  /* Ẩn chữ (chỉ giữ icon) */
+    }
+
+    /* Nội dung chính đẩy sang phải 100px (bằng chiều rộng sidebar mới) */
+    .content {
+        margin-left: 100px;
+    }
+
+    /* Thẻ thống kê chuyển thành 1 cột */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Bảng chữ nhỏ lại để vừa màn hình */
+    table {
+        font-size: 13px;
+    }
+
+    /* Giảm đệm của bảng để tiết kiệm diện tích */
+    table th,
+    table td {
+        padding: 10px;
+    }
+}

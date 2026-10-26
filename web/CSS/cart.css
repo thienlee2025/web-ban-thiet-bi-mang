@@ -1,0 +1,351 @@
+/* =========================
+   RESET CSS - GỌN LẠI MẶC ĐỊNH
+========================= */
+
+/* Chọn tất cả các phần tử */
+* {
+    margin: 0;                      /* Xóa lề ngoài mặc định */
+    padding: 0;                     /* Xóa khoảng đệm mặc định */
+    box-sizing: border-box;         /* Padding/border không làm tăng kích thước phần tử */
+    font-family: Arial, Helvetica, sans-serif; /* Font chữ mặc định */
+}
+
+/* Phần body của trang */
+body {
+    background: #f5f5f5;            /* Màu nền xám nhạt */
+}
+
+/* ================= CONTAINER - KHUNG CHỨA GIỎ HÀNG ================= */
+
+/* Khung chứa toàn bộ nội dung trang giỏ hàng */
+.cart-container {
+    width: 92%;                     /* Chiều rộng 92% so với màn hình */
+    margin: 40px auto;              /* Lề trên dưới 40px, auto để canh giữa */
+}
+
+/* ================= TITLE - TIÊU ĐỀ TRANG ================= */
+
+/* Thẻ h2 (tiêu đề) */
+h2 {
+    text-align: center;             /* Canh giữa chữ */
+    margin-bottom: 30px;            /* Khoảng cách dưới 30px */
+    color: #ff6600;                 /* Màu cam */
+    font-size: 34px;                /* Cỡ chữ 34px */
+}
+
+/* ================= TABLE - BẢNG GIỎ HÀNG ================= */
+
+/* Bảng hiển thị sản phẩm trong giỏ */
+.cart-table {
+    width: 100%;                    /* Chiều rộng 100% khung cha */
+    border-collapse: collapse;      /* Gộp đường viền của các ô */
+    background: white;              /* Nền trắng */
+    border-radius: 15px;            /* Bo góc 15px */
+    overflow: hidden;               /* Ẩn phần thừa để bo góc hoạt động */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+}
+
+/* ================= HEADER - HÀNG TIÊU ĐỀ CỦA BẢNG ================= */
+
+/* Các ô th (header) trong bảng */
+.cart-table th {
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    padding: 18px;                  /* Đệm 18px */
+    font-size: 15px;                /* Cỡ chữ 15px */
+}
+
+/* ================= CELL - Ô DỮ LIỆU TRONG BẢNG ================= */
+
+/* Các ô td (dữ liệu) trong bảng */
+.cart-table td {
+    padding: 18px;                  /* Đệm 18px */
+    text-align: center;             /* Canh giữa nội dung */
+    border-bottom: 1px solid #eee;  /* Viền dưới màu xám mờ */
+}
+
+/* ================= HOVER - HIỆU ỨNG CHUỘT ================= */
+
+/* Khi hover chuột vào hàng của bảng */
+.cart-table tr:hover {
+    background: #fff7f0;            /* Nền cam rất nhạt */
+}
+
+/* ================= IMAGE - ẢNH SẢN PHẨM ================= */
+
+/* Ảnh sản phẩm trong giỏ */
+.cart-img {
+    width: 80px;                    /* Chiều rộng 80px */
+    height: 80px;                   /* Chiều cao 80px */
+    object-fit: contain;            /* Giữ tỷ lệ ảnh, không cắt */
+    background: white;              /* Nền trắng */
+    border-radius: 10px;            /* Bo góc 10px */
+    padding: 5px;                   /* Đệm trong 5px */
+}
+
+/* ================= PRODUCT NAME - TÊN SẢN PHẨM ================= */
+
+/* Tên sản phẩm */
+.product-name {
+    font-weight: bold;              /* Chữ đậm */
+    color: #333;                    /* Màu xám đậm */
+    width: 250px;                   /* Chiều rộng cố định 250px */
+}
+
+/* ================= PRICE - GIÁ TIỀN ================= */
+
+/* Giá sản phẩm */
+.price {
+    color: #ff6600;                 /* Màu cam */
+    font-size: 18px;                /* Cỡ chữ 18px */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* ================= QUANTITY - SỐ LƯỢNG SẢN PHẨM ================= */
+
+/* Form chứa ô nhập số lượng */
+.qty-form {
+    display: flex;                  /* Dùng flex */
+    flex-direction: column;         /* Xếp theo cột dọc */
+    align-items: center;            /* Canh giữa theo chiều ngang */
+    gap: 8px;                       /* Khoảng cách giữa các phần tử 8px */
+}
+
+/* Ô input nhập số lượng */
+.qty-input {
+    width: 55px;                    /* Chiều rộng 55px */
+    height: 32px;                   /* Chiều cao 32px */
+    text-align: center;             /* Canh giữa chữ */
+    border: 1px solid #ddd;         /* Viền xám mờ */
+    border-radius: 8px;             /* Bo góc 8px */
+    font-size: 16px;                /* Cỡ chữ 16px */
+}
+
+/* ================= QUANTITY BOX - HỘP ĐIỀU CHỈNH SỐ LƯỢNG ================= */
+
+/* Khung chứa nút + và - để tăng/giảm số lượng */
+.qty-box {
+    display: flex;                  /* Dùng flex */
+    align-items: center;            /* Canh giữa chiều dọc */
+    justify-content: center;        /* Canh giữa chiều ngang */
+    gap: 8px;                       /* Khoảng cách giữa các nút 8px */
+}
+
+/* Nút tăng/giảm số lượng (+ và -) */
+.qty-btn {
+    width: 32px;                    /* Chiều rộng 32px */
+    height: 32px;                   /* Chiều cao 32px */
+    border: none;                   /* Không viền */
+    border-radius: 8px;             /* Bo góc 8px */
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    font-size: 20px;                /* Cỡ chữ 20px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút tăng/giảm */
+.qty-btn:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: scale(1.05);         /* Phóng to nhẹ 5% */
+}
+
+/* ================= BUTTON - NÚT CẬP NHẬT ================= */
+
+/* Nút cập nhật số lượng */
+.update-btn {
+    background: #ff6600;            /* Nền cam */
+    color: white;                   /* Chữ trắng */
+    border: none;                   /* Không viền */
+    padding: 8px 12px;              /* Đệm trên dưới 8px, trái phải 12px */
+    border-radius: 8px;             /* Bo góc 8px */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút cập nhật */
+.update-btn:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+}
+
+/* ================= DELETE BUTTON - NÚT XÓA SẢN PHẨM ================= */
+
+/* Nút xóa sản phẩm (hình tròn) */
+.delete-btn {
+    width: 38px;                    /* Chiều rộng 38px */
+    height: 38px;                   /* Chiều cao 38px */
+    border: none;                   /* Không viền */
+    border-radius: 50%;             /* Bo góc 50% để tạo hình tròn */
+    background: #ef4444;            /* Nền đỏ */
+    color: white;                   /* Chữ trắng */
+    font-size: 16px;                /* Cỡ chữ 16px */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Hover vào nút xóa */
+.delete-btn:hover {
+    background: #dc2626;            /* Nền đỏ đậm hơn */
+    transform: scale(1.1);          /* Phóng to 10% */
+}
+
+/* ================= TOTAL - TỔNG TIỀN GIỎ HÀNG ================= */
+
+/* Khung hiển thị tổng tiền */
+.cart-total {
+    margin-top: 25px;               /* Khoảng cách trên 25px */
+    text-align: right;              /* Canh phải chữ */
+    font-size: 30px;                /* Cỡ chữ 30px */
+    font-weight: bold;              /* Chữ đậm */
+    color: #333;                    /* Màu xám đậm */
+}
+
+/* Phần số tiền trong tổng (được bọc trong thẻ span) */
+.cart-total span {
+    color: #ff6600;                 /* Màu cam */
+}
+
+/* ================= ACTION - HÀNH ĐỘNG (NÚT TIẾP TỤC MUA / THANH TOÁN) ================= */
+
+/* Khung chứa các nút hành động */
+.cart-actions {
+    margin-top: 30px;               /* Khoảng cách trên 30px */
+    display: flex;                  /* Dùng flex */
+    justify-content: space-between; /* Canh 2 đầu: nút shop ở trái, checkout ở phải */
+    align-items: center;            /* Canh giữa chiều dọc */
+}
+
+/* ================= BUTTONS - CÁC NÚT CHỨC NĂNG ================= */
+
+/* Nút tiếp tục mua hàng và nút thanh toán (dùng chung style) */
+.shop-btn,
+.checkout-btn {
+    padding: 14px 24px;             /* Đệm trên dưới 14px, trái phải 24px */
+    border: none;                   /* Không viền */
+    border-radius: 10px;            /* Bo góc 10px */
+    color: white;                   /* Chữ trắng */
+    font-size: 15px;                /* Cỡ chữ 15px */
+    font-weight: bold;              /* Chữ đậm */
+    cursor: pointer;                /* Con trỏ chuột thành bàn tay */
+    transition: 0.3s;               /* Hiệu ứng chuyển đổi 0.3s */
+}
+
+/* Nút "Tiếp tục mua hàng" (Shop) */
+.shop-btn {
+    background: #333;               /* Nền xám đậm */
+}
+
+/* Hover vào nút Shop */
+.shop-btn:hover {
+    background: #111;               /* Nền đen */
+}
+
+/* Nút "Thanh toán" (Checkout) */
+.checkout-btn {
+    background: #ff6600;            /* Nền cam */
+}
+
+/* Hover vào nút thanh toán */
+.checkout-btn:hover {
+    background: #e65c00;            /* Nền cam đậm hơn */
+    transform: translateY(-2px);    /* Nhấc lên trên 2px */
+}
+
+/* ================= EMPTY CART - GIỎ HÀNG TRỐNG ================= */
+
+/* Khung hiển thị khi giỏ hàng không có sản phẩm */
+.empty-cart {
+    text-align: center;             /* Canh giữa nội dung */
+    background: white;              /* Nền trắng */
+    padding: 60px;                  /* Đệm 60px */
+    border-radius: 15px;            /* Bo góc 15px */
+}
+
+/* Tiêu đề trong giỏ hàng trống */
+.empty-cart h3 {
+    margin-bottom: 20px;            /* Khoảng cách dưới 20px */
+    color: #777;                    /* Màu xám */
+}
+
+/* ================= LOGIN WARNING - CẢNH BÁO ĐĂNG NHẬP ================= */
+
+/* Khung cảnh báo (hiển thị khi chưa đăng nhập) */
+.login-warning {
+    width: fit-content;             /* Chiều rộng tự động theo nội dung */
+    margin: 20px auto;              /* Lề trên dưới 20px, auto để canh giữa */
+    padding: 15px 20px;             /* Đệm trên dưới 15px, trái phải 20px */
+    background: #fff3e6;            /* Nền cam rất nhạt */
+    color: #ff6600;                 /* Chữ cam */
+    border-radius: 10px;            /* Bo góc 10px */
+    font-weight: bold;              /* Chữ đậm */
+}
+
+/* ================= ORDER STATUS - TRẠNG THÁI ĐƠN HÀNG ================= */
+
+/* Khung hiển thị trạng thái đơn hàng (thường dùng ở trang đơn hàng) */
+.order-status {
+    margin: 15px 0;                 /* Lề trên dưới 15px */
+    padding: 14px 18px;             /* Đệm trên dưới 14px, trái phải 18px */
+    border-radius: 10px;            /* Bo góc 10px */
+    font-weight: bold;              /* Chữ đậm */
+    color: white;                   /* Chữ trắng */
+    font-size: 16px;                /* Cỡ chữ 16px */
+}
+
+/* Trạng thái: Đang chờ xử lý (Pending) */
+.order-status.pending {
+    background: #ff9800;            /* Màu cam */
+}
+
+/* Trạng thái: Đã xác nhận (Confirmed) */
+.order-status.confirmed {
+    background: #2196f3;            /* Màu xanh dương */
+}
+
+/* Trạng thái: Đang giao hàng (Shipping) */
+.order-status.shipping {
+    background: #9c27b0;            /* Màu tím */
+}
+
+/* Trạng thái: Hoàn thành (Completed) */
+.order-status.completed {
+    background: #28a745;            /* Màu xanh lá */
+}
+
+/* ================= RESPONSIVE - GIAO DIỆN THÍCH ỨNG ================= */
+
+/* Màn hình có chiều rộng <= 768px (điện thoại, máy tính bảng dọc) */
+@media (max-width: 768px) {
+    
+    /* Giảm đệm và cỡ chữ của bảng để vừa màn hình */
+    .cart-table th,
+    .cart-table td {
+        padding: 10px;              /* Đệm 10px (giảm từ 18px) */
+        font-size: 13px;            /* Cỡ chữ 13px (giảm từ 15px) */
+    }
+    
+    /* Ảnh sản phẩm nhỏ lại */
+    .cart-img {
+        width: 60px;                /* Chiều rộng 60px (giảm từ 80px) */
+        height: 60px;               /* Chiều cao 60px (giảm từ 80px) */
+    }
+    
+    /* Các nút hành động xếp theo cột dọc */
+    .cart-actions {
+        flex-direction: column;     /* Xếp dọc thay vì ngang */
+        gap: 15px;                  /* Khoảng cách giữa các nút 15px */
+    }
+    
+    /* Nút shop và checkout chiếm toàn bộ chiều rộng */
+    .shop-btn,
+    .checkout-btn {
+        width: 100%;                /* Chiều rộng 100% */
+    }
+    
+    /* Tổng tiền canh giữa và nhỏ lại */
+    .cart-total {
+        text-align: center;         /* Canh giữa thay vì canh phải */
+        font-size: 24px;            /* Cỡ chữ 24px (giảm từ 30px) */
+    }
+}
